@@ -7,15 +7,17 @@ class Usuario {
     String login
     String senha
 
-    static hasOne = [registroUsuario: RegistroUsuario]
-
     static constraints = {
         login nullable: false, blank: false, maxSize: 16
         senha nullable: false, blank: false, maxSize: 312
-        registroUsuario nullable: true
     }
-
+    
     static String md5(String texto) {
+        
+        if (!texto) {
+            return null
+        }
+        
         MessageDigest.getInstance("MD5")
                 .digest(texto.bytes)
                 .encodeHex()

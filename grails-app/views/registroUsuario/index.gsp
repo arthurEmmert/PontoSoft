@@ -12,154 +12,243 @@
             margin: 0;
             font-family: Arial, sans-serif;
             min-height: 100vh;
-            background:
-                radial-gradient(circle at top, rgba(124, 58, 237, 0.26), transparent 35%),
-                linear-gradient(135deg, #050505, #0f0f2e, #2e1065, #4c1d95);
-            color: #f8fafc;
-        }
-
-        .page {
-            min-height: 100vh;
+            background: #f4f8f7;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 24px;
         }
 
-        .panel-card {
-            width: 100%;
-            max-width: 560px;
-            background: rgba(15, 23, 42, 0.96);
-            border-radius: 22px;
-            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.70);
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.08);
-            backdrop-filter: blur(10px);
-        }
-
-        .card-header {
-            padding: 28px 24px 22px;
-            background: linear-gradient(90deg, rgba(76, 29, 149, 0.95), rgba(124, 58, 237, 0.95));
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .card-title {
-            margin: 0;
-            font-size: 28px;
-            font-weight: 700;
-            color: #ffffff;
-        }
-
-        .card-subtitle {
-            margin: 8px 0 0;
-            font-size: 14px;
-            color: rgba(255,255,255,0.88);
-        }
-
-        .form-body {
-            padding: 24px;
-        }
-
-        .form-card {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.06);
+        .registro-container {
+            width: 760px;
+            min-height: 500px;
+            background: white;
+            display: flex;
             border-radius: 18px;
-            padding: 18px;
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.15);
+        }
+
+        .registro-left {
+            width: 35%;
+            background: linear-gradient(160deg, #065f46, #047857, #10b981);
+            color: white;
+            padding: 42px 26px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .registro-left::before {
+            content: "";
+            position: absolute;
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.13);
+            bottom: 52px;
+        }
+
+        .registro-left::after {
+            content: "";
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            top: 42px;
+            right: -30px;
+        }
+
+        .logo {
+            font-size: 30px;
+            margin-bottom: 12px;
+            z-index: 1;
+        }
+
+        .brand {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            line-height: 1.5;
+            color: rgba(255,255,255,0.88);
+            max-width: 220px;
+            z-index: 1;
+        }
+
+        .user-circle {
+            margin-top: 70px;
+            width: 88px;
+            height: 88px;
+            background: rgba(255,255,255,0.92);
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.18);
+            z-index: 1;
+        }
+
+        .user-circle::before {
+            content: "";
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #047857;
+            left: 30px;
+            top: 20px;
+        }
+
+        .user-circle::after {
+            content: "";
+            position: absolute;
+            width: 48px;
+            height: 24px;
+            border-radius: 24px 24px 8px 8px;
+            background: #047857;
+            left: 20px;
+            top: 52px;
+        }
+
+        .registro-right {
+            width: 65%;
+            padding: 48px 55px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .registro-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .registro-description {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 28px;
         }
 
         .field {
-            margin-bottom: 18px;
+            margin-bottom: 17px;
         }
 
         .field label {
             display: block;
-            margin-bottom: 8px;
             font-size: 13px;
             font-weight: 600;
-            color: #dbe4f0;
+            color: #334155;
+            margin-bottom: 7px;
         }
 
         .field input {
             width: 100%;
-            padding: 14px 15px;
-            border: 1px solid #334155;
-            border-radius: 14px;
-            background: #1e293b;
-            color: #f8fafc;
+            padding: 12px 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
             font-size: 14px;
-            transition: all 0.2s ease;
+            color: #0f172a;
+            background: #ffffff;
+            transition: 0.2s;
         }
 
         .field input:focus {
             outline: none;
-            border-color: #8b5cf6;
-            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.18);
-        }
-
-        .alert {
-            margin-bottom: 16px;
-            padding: 14px;
-            border-radius: 12px;
-            font-size: 14px;
-        }
-
-        .alert-danger {
-            background: rgba(239,68,68,0.15);
-            color: #f87171;
-            border: 1px solid rgba(239,68,68,0.3);
-        }
-
-        .alert-success {
-            background: rgba(34,197,94,0.15);
-            color: #4ade80;
-            border: 1px solid rgba(34,197,94,0.3);
+            border-color: #059669;
+            box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.16);
         }
 
         .action-row {
             display: flex;
             gap: 12px;
-            margin-top: 6px;
+            margin-top: 14px;
         }
 
         .btn {
             flex: 1;
-            padding: 14px 16px;
-            border-radius: 14px;
+            padding: 12px;
+            border-radius: 8px;
             border: none;
             font-size: 14px;
             font-weight: 700;
             text-align: center;
             cursor: pointer;
-            color: white;
             text-decoration: none;
-            background: linear-gradient(90deg, #8b5cf6, #6d28d9);
-            box-shadow: 0 12px 28px rgba(109, 40, 217, 0.28);
-            transition: all 0.2s ease;
+            transition: 0.2s;
         }
 
-        .btn:hover {
-            transform: translateY(-2px);
+        .btn-salvar {
+            background: linear-gradient(90deg, #059669, #047857);
+            color: white;
+        }
+
+        .btn-salvar:hover {
             filter: brightness(1.08);
+            transform: translateY(-1px);
+        }
+
+        .btn-login {
+            border: 1px solid #059669;
+            background: white;
+            color: #047857;
+        }
+
+        .btn-login:hover {
+            background: #ecfdf5;
         }
 
         .helper-text {
-            margin-top: 14px;
+            margin-top: 18px;
             font-size: 12px;
-            color: #94a3b8;
+            color: #64748b;
             text-align: center;
         }
 
-        @media (max-width: 600px) {
-            .panel-card {
-                max-width: 100%;
+        .alert {
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 18px;
+            font-size: 14px;
+        }
+
+        .alert-danger {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+
+        .alert-success {
+            background: #ecfdf5;
+            color: #047857;
+            border: 1px solid #a7f3d0;
+        }
+
+        @media (max-width: 760px) {
+            .registro-container {
+                width: 92%;
+                flex-direction: column;
             }
 
-            .card-title {
-                font-size: 24px;
+            .registro-left,
+            .registro-right {
+                width: 100%;
             }
 
-            .form-body {
-                padding: 18px;
+            .registro-left {
+                padding: 30px 20px;
+            }
+
+            .user-circle {
+                display: none;
             }
 
             .action-row {
@@ -170,60 +259,81 @@
 </head>
 
 <body>
-<div class="page">
-    <section class="panel-card">
 
-        <div class="card-header">
-            <h2 class="card-title">Criar acesso</h2>
-            <p class="card-subtitle">Informe o nome de login e defina uma senha.</p>
+<div class="registro-container">
+
+    <div class="registro-left">
+        <div class="logo">⏱</div>
+        <div class="brand">Ponto Soft</div>
+        <div class="subtitle">
+            Cadastre sua conta para acessar o sistema de ponto
         </div>
 
-        <div class="form-body">
+        <div class="user-circle"></div>
+    </div>
 
-            <g:if test="${flash.erro}">
-                <div class="alert alert-danger">${flash.erro}</div>
-            </g:if>
+    <div class="registro-right">
 
-            <g:if test="${flash.sucesso}">
-                <div class="alert alert-success">${flash.sucesso}</div>
-            </g:if>
+        <div class="registro-title">Olá, vamos criar sua conta!</div>
+        <div class="registro-description">
+            Informe os dados abaixo para registrar seu acesso
+        </div>
 
-            <div class="form-card">
-                <g:form controller="registroUsuario" action="salvar" method="post">
+        <g:if test="${flash.erro}">
+            <div class="alert alert-danger">${flash.erro}</div>
+        </g:if>
 
-                    <div class="field">
-                        <label>Nome de login</label>
-                        <g:textField name="nomeUsuario" value="${registroUsuario?.nomeUsuario}" />
-                    </div>
+        <g:if test="${flash.sucesso}">
+            <div class="alert alert-success">${flash.sucesso}</div>
+        </g:if>
 
-                    <div class="field">
-                        <label>Senha</label>
-                        <g:passwordField name="senha" />
-                    </div>
+        <g:form controller="registroUsuario" action="salvar" method="post">
 
-                    <div class="field">
-                        <label>Confirmar senha</label>
-                        <g:passwordField name="confirmarSenha" />
-                    </div>
-
-                    <div class="action-row">
-                        <g:submitButton name="Salvar" class="btn" />
-
-                        <g:link controller="auth" action="index" class="btn">
-                            Já tenho uma conta
-                        </g:link>
-                    </div>
-
-                </g:form>
-
-                <div class="helper-text">
-                    Use uma senha segura e confirme os dados antes de salvar.
-                </div>
+            <div class="field">
+                <label>Nome de login</label>
+                <g:textField
+                        name="nomeUsuario"
+                        value="${registroUsuario?.nomeUsuario}"
+                        placeholder="Digite seu login" />
             </div>
 
+            <div class="field">
+                <label>Senha</label>
+                <g:passwordField
+                        name="senha"
+                        placeholder="Digite sua senha" />
+            </div>
+
+            <div class="field">
+                <label>Confirmar senha</label>
+                <g:passwordField
+                        name="confirmarSenha"
+                        placeholder="Confirme sua senha" />
+            </div>
+
+            <div class="action-row">
+                <g:submitButton
+                        name="salvar"
+                        value="Criar conta"
+                        class="btn btn-salvar" />
+
+                <g:link
+                        controller="auth"
+                        action="index"
+                        class="btn btn-login">
+                    Já tenho conta
+                </g:link>
+            </div>
+
+        </g:form>
+
+        <div class="helper-text">
+            Use uma senha segura para proteger seu acesso.
         </div>
 
-    </section>
+    </div>
+
 </div>
+
 </body>
 </html>

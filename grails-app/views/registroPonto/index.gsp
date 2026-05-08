@@ -4,6 +4,7 @@
     <title>Registros de Ponto</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -12,335 +13,363 @@
             margin: 0;
             font-family: Arial, sans-serif;
             min-height: 100vh;
-            background:
-                radial-gradient(circle at top, rgba(124, 58, 237, 0.22), transparent 35%),
-                linear-gradient(135deg, #050505, #0f0f2e, #2e1065, #4c1d95);
-            color: #f9fafb;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 28px 20px;
-        }
-
-        .ponto-box {
-            width: 100%;
-            max-width: 980px;
-            background: rgba(17, 24, 39, 0.96);
-            border-radius: 20px;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.08);
-            backdrop-filter: blur(6px);
-        }
-
-        .ponto-header {
-            background: linear-gradient(90deg, rgba(76, 29, 149, 0.95), rgba(124, 58, 237, 0.95));
-            padding: 26px 28px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 16px;
-            flex-wrap: wrap;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .titulo-area h2 {
-            margin: 0;
-            font-size: 28px;
-            color: #ffffff;
-        }
-
-        .titulo-area p {
-            margin: 8px 0 0;
-            font-size: 14px;
-            color: rgba(255,255,255,0.88);
-        }
-
-        .ponto-body {
+            background: #f4f8f7;
             padding: 24px;
         }
 
-        .btn-filtrar,
-        .btn-entrar {
-            display: inline-block;
-            padding: 12px 16px;
-            border-radius: 12px;
-            text-align: center;
-            font-weight: 700;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 14px;
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-card {
+            background: linear-gradient(160deg, #065f46, #047857, #10b981);
+            color: white;
+            border-radius: 22px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.15);
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .header-title h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .header-title p {
+            margin: 8px 0 0;
+            color: rgba(255,255,255,0.88);
         }
 
         .btn-filtrar {
-            background: rgba(255,255,255,0.14);
-            color: #fff;
-            border: 1px solid rgba(255,255,255,0.16);
+            padding: 12px 18px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.16);
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.2s;
+            border: 1px solid rgba(255,255,255,0.22);
         }
 
         .btn-filtrar:hover {
-            background: rgba(255,255,255,0.22);
-            transform: translateY(-2px);
-            color: #fff;
-            text-decoration: none;
+            background: rgba(255,255,255,0.24);
+            transform: translateY(-1px);
         }
 
-        .mensagem-sucesso,
-        .mensagem-erro {
-            padding: 13px 14px;
-            margin-bottom: 16px;
-            border-radius: 12px;
+        .content-card {
+            background: white;
+            border-radius: 20px;
+            padding: 24px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 16px 35px rgba(15, 23, 42, 0.08);
+        }
+
+        .alert {
+            padding: 13px;
+            border-radius: 10px;
+            margin-bottom: 18px;
             font-size: 14px;
         }
 
-        .mensagem-sucesso {
-            background: rgba(34,197,94,0.15);
-            color: #4ade80;
-            border: 1px solid rgba(34,197,94,0.3);
+        .alert-success {
+            background: #ecfdf5;
+            color: #047857;
+            border: 1px solid #a7f3d0;
         }
 
-        .mensagem-erro {
-            background: rgba(239,68,68,0.15);
-            color: #f87171;
-            border: 1px solid rgba(239,68,68,0.3);
-        }
-
-        /* área de registros mais clara */
-        .registros-card {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 16px;
-            padding: 16px;
+        .alert-danger {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
         }
 
         .table-wrapper {
             overflow-x: auto;
-            border-radius: 14px;
-            border: 1px solid rgba(255,255,255,0.08);
-            background: #243041;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
         }
 
         .tabela-ponto {
             width: 100%;
             border-collapse: collapse;
-            background: transparent;
-        }
-
-        .tabela-ponto th,
-        .tabela-ponto td {
-            padding: 14px 16px;
-            text-align: left;
-            border-bottom: 1px solid #475569;
-            color: #f1f5f9;
-            vertical-align: middle;
+            background: white;
         }
 
         .tabela-ponto th {
-            background: #1a2433;
-            color: #dbe4f0;
-            font-size: 12px;
+            background: #f8fafc;
+            color: #334155;
+            font-size: 13px;
             text-transform: uppercase;
-            letter-spacing: 0.6px;
-            position: sticky;
-            top: 0;
+            letter-spacing: 0.4px;
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .tabela-ponto td {
+            padding: 16px;
+            border-bottom: 1px solid #f1f5f9;
+            color: #0f172a;
         }
 
         .tabela-ponto tr:hover td {
-            background: rgba(167, 139, 250, 0.10);
-        }
-
-        .tabela-ponto td:first-child {
-            font-weight: 600;
-            color: #ffffff;
+            background: #f8fafc;
         }
 
         .status-aberto {
             display: inline-block;
-            padding: 6px 10px;
+            padding: 6px 12px;
             border-radius: 999px;
+            font-size: 12px;
             font-weight: 700;
-            color: #fcd34d;
-            background: rgba(251, 191, 36, 0.14);
-            border: 1px solid rgba(251, 191, 36, 0.28);
+            background: #fef3c7;
+            color: #b45309;
         }
 
         .btn-excluir {
             display: inline-block;
-            padding: 8px 12px;
+            padding: 9px 14px;
             border-radius: 10px;
-            color: #fca5a5;
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
             text-decoration: none;
             font-weight: 700;
-            background: rgba(239, 68, 68, 0.14);
-            border: 1px solid rgba(239, 68, 68, 0.22);
-            transition: all 0.2s ease;
+            transition: 0.2s;
         }
 
         .btn-excluir:hover {
-            background: rgba(239, 68, 68, 0.24);
-            color: #fff;
-            text-decoration: none;
+            background: #fee2e2;
             transform: translateY(-1px);
         }
 
         .vazio {
             text-align: center;
-            color: #cbd5e1;
-            padding: 22px;
+            padding: 24px;
+            color: #64748b;
         }
 
         .acoes {
-            margin-top: 22px;
             display: flex;
-            gap: 12px;
+            gap: 14px;
+            margin-top: 24px;
             flex-wrap: wrap;
         }
 
-        .acoes .btn-entrar {
+        .btn-acao {
             flex: 1;
             min-width: 220px;
-            background: linear-gradient(90deg, #8b5cf6, #6d28d9);
-            color: white;
-            box-shadow: 0 10px 24px rgba(109, 40, 217, 0.2);
-        }
-
-        .acoes .btn-entrar:hover {
-            transform: translateY(-2px);
-            filter: brightness(1.08);
-            color: white;
+            padding: 13px 18px;
+            border-radius: 10px;
+            text-align: center;
             text-decoration: none;
+            font-weight: 700;
+            transition: 0.2s;
         }
 
-        @media (max-width: 700px) {
-            body {
-                align-items: flex-start;
+        .btn-cadastrar {
+            background: linear-gradient(90deg, #059669, #047857);
+            color: white;
+        }
+
+        .btn-cadastrar:hover {
+            filter: brightness(1.08);
+            transform: translateY(-1px);
+        }
+
+        .btn-voltar {
+            background: white;
+            color: #047857;
+            border: 1px solid #10b981;
+        }
+
+        .btn-voltar:hover {
+            background: #ecfdf5;
+        }
+
+        @media (max-width: 750px) {
+
+            .header-card {
+                padding: 24px;
             }
 
-            .titulo-area h2 {
-                font-size: 24px;
+            .header-title h1 {
+                font-size: 26px;
             }
 
-            .ponto-header {
-                padding: 22px 20px;
-            }
-
-            .ponto-body {
+            .content-card {
                 padding: 18px;
             }
 
-            .registros-card {
-                padding: 12px;
+            .acoes {
+                flex-direction: column;
             }
 
-            .tabela-ponto th,
-            .tabela-ponto td {
-                padding: 12px;
+            .btn-acao {
+                width: 100%;
             }
         }
+
     </style>
 </head>
+
 <body>
 
 <g:set var="formato" value="${java.time.format.DateTimeFormatter.ofPattern('dd/MM/yyyy HH:mm')}" />
 
-<div class="ponto-box">
+<div class="page-container">
 
-    <div class="ponto-header">
-        <div class="titulo-area">
-            <h2>Registros de Ponto</h2>
-            <p>Visualize, acompanhe e gerencie os registros cadastrados</p>
+    <div class="header-card">
+
+        <div class="header-title">
+            <h1>Registros de Ponto</h1>
+            <p>Visualize, acompanhe e gerencie os registros cadastrados.</p>
         </div>
 
-        <g:link controller="relatorio" action="listarcolaboradores" class="btn-filtrar">
+        <g:link controller="relatorio"
+                action="listarcolaboradores"
+                class="btn-filtrar">
+
             Filtrar registros
+
         </g:link>
+
     </div>
 
-    <div class="ponto-body">
+    <div class="content-card">
 
         <g:if test="${flash.sucesso}">
-            <div class="mensagem-sucesso">${flash.sucesso}</div>
+            <div class="alert alert-success">
+                ${flash.sucesso}
+            </div>
         </g:if>
 
         <g:if test="${flash.erro}">
-            <div class="mensagem-erro">${flash.erro}</div>
+            <div class="alert alert-danger">
+                ${flash.erro}
+            </div>
         </g:if>
 
-        <div class="registros-card">
-            <div class="table-wrapper">
-                <table class="tabela-ponto">
-                    <thead>
+        <div class="table-wrapper">
+
+            <table class="tabela-ponto">
+
+                <thead>
+                <tr>
+                    <th>Colaborador</th>
+                    <th>Tipo</th>
+                    <th>Entrada</th>
+                    <th>Saída</th>
+                    <th>Duração</th>
+                    <th></th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+                <g:if test="${registros}">
+
+                    <g:each in="${registros}" var="registro">
+
                         <tr>
-                            <th>Colaborador</th>
-                            <th>Tipo</th>
-                            <th>Entrada</th>
-                            <th>Saída</th>
-                            <th>Duração</th>
-                            <th>    </th>
+
+                            <td>${registro.colaborador?.nome}</td>
+
+                            <td>${registro.colaborador?.tipoColab}</td>
+
+                            <td>${registro.entrada?.format(formato)}</td>
+
+                            <td>
+
+                                <g:if test="${registro.saida}">
+                                    ${registro.saida?.format(formato)}
+                                </g:if>
+
+                                <g:else>
+                                    <span class="status-aberto">
+                                        Em aberto
+                                    </span>
+                                </g:else>
+
+                            </td>
+
+                            <td>
+
+                                <g:if test="${registro.saida}">
+
+                                    ${java.time.Duration.between(registro.entrada, registro.saida).toHours()}h
+
+                                    ${java.time.Duration.between(registro.entrada, registro.saida).toMinutes() % 60}min
+
+                                </g:if>
+
+                                <g:else>
+                                    -
+                                </g:else>
+
+                            </td>
+
+                            <td>
+
+                                <g:link controller="registroPonto"
+                                        action="excluir"
+                                        id="${registro.id}"
+                                        class="btn-excluir"
+                                        onclick="return confirm('Deseja excluir este registro?')">
+
+                                    Excluir
+
+                                </g:link>
+
+                            </td>
+
                         </tr>
-                    </thead>
 
-                    <tbody>
-                        <g:if test="${registros}">
-                            <g:each in="${registros}" var="registro">
-                                <tr>
-                                    <td>${registro.colaborador?.nome}</td>
-                                    <td>${registro.colaborador?.tipoColab}</td>
-                                    <td>${registro.entrada?.format(formato)}</td>
+                    </g:each>
 
-                                    <td>
-                                        <g:if test="${registro.saida}">
-                                            ${registro.saida?.format(formato)}
-                                        </g:if>
-                                        <g:else>
-                                            <span class="status-aberto">Em aberto</span>
-                                        </g:else>
-                                    </td>
+                </g:if>
 
-                                    <td>
-                                        <g:if test="${registro.saida}">
-                                            ${java.time.Duration.between(registro.entrada, registro.saida).toHours()}h
-                                            ${java.time.Duration.between(registro.entrada, registro.saida).toMinutes() % 60}min
-                                        </g:if>
-                                        <g:else>
-                                            -
-                                        </g:else>
-                                    </td>
+                <g:else>
 
-                                    <td>
-                                        <g:link controller="registroPonto"
-                                                action="excluir"
-                                                id="${registro.id}"
-                                                class="btn-excluir"
-                                                onclick="return confirm('Deseja excluir este registro?')">
-                                            Excluir
-                                        </g:link>
-                                    </td>
-                                </tr>
-                            </g:each>
-                        </g:if>
+                    <tr>
+                        <td colspan="6" class="vazio">
+                            Nenhum registro de ponto encontrado.
+                        </td>
+                    </tr>
 
-                        <g:else>
-                            <tr>
-                                <td colspan="6" class="vazio">Nenhum registro de ponto encontrado.</td>
-                            </tr>
-                        </g:else>
-                    </tbody>
-                </table>
-            </div>
+                </g:else>
+
+                </tbody>
+
+            </table>
+
         </div>
 
         <div class="acoes">
-            <g:link controller="registroPonto" action="create" class="btn-entrar">
+
+            <g:link controller="registroPonto"
+                    action="create"
+                    class="btn-acao btn-cadastrar">
+
                 Cadastrar novo ponto
+
             </g:link>
 
-            <g:link controller="dashboard" action="index" class="btn-entrar">
+            <g:link controller="dashboard"
+                    action="index"
+                    class="btn-acao btn-voltar">
+
                 Voltar
+
             </g:link>
+
         </div>
 
     </div>

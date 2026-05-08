@@ -44,18 +44,18 @@ class RegistroUsuarioController {
             return
         }
 
-        def registroUsuario = new RegistroUsuario(
-                nomeUsuario: params.nomeUsuario,
-                senha: params.senha,
-                usuario: usuario
-        )
+//        def registroUsuario = new RegistroUsuario( //CORRIGIDO BUG 6
+//                nomeUsuario: params.nomeUsuario,
+//                senha: RegistroUsuario.md5(params.senha),
+//                usuario: usuario
+//        )
 
-        if (!registroUsuario.save(flush: true)) {
-            transactionStatus.setRollbackOnly()
-            flash.erro = "Erro ao registrar o usuário."
-            render view: "index", model: [registroUsuario: params]
-            return
-        }
+//        if (!registroUsuario.save(flush: true)) {
+//            transactionStatus.setRollbackOnly()
+//            flash.erro = "Erro ao registrar o usuário."
+//            render view: "index", model: [registroUsuario: params]
+//            return
+//        }
 
         flash.sucesso = "Usuário criado com sucesso. Faça o login."
         redirect controller: "auth", action: "index"

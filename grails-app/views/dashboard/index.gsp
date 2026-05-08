@@ -12,188 +12,185 @@
             margin: 0;
             font-family: Arial, sans-serif;
             min-height: 100vh;
-            background:
-                radial-gradient(circle at top, rgba(124, 58, 237, 0.25), transparent 35%),
-                linear-gradient(135deg, #050505, #0f0f2e, #2e1065, #4c1d95);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: #f4f8f7;
             padding: 24px;
         }
 
-        .dashboard-box {
-            width: 100%;
-            max-width: 560px;
-            background: rgba(17, 24, 39, 0.95);
-            border-radius: 18px;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.08);
-            backdrop-filter: blur(6px);
+        .dashboard-container {
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .dashboard-header {
-            padding: 28px 28px 22px;
-            background: linear-gradient(90deg, rgba(76, 29, 149, 0.95), rgba(124, 58, 237, 0.95));
+            background: linear-gradient(160deg, #065f46, #047857, #10b981);
             color: white;
-            text-align: center;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-radius: 22px;
+            padding: 34px;
+            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.15);
+            margin-bottom: 24px;
         }
 
         .dashboard-header h1 {
             margin: 0;
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+            font-size: 32px;
         }
 
         .dashboard-header p {
             margin: 8px 0 0;
-            font-size: 14px;
-            color: rgba(255,255,255,0.85);
+            color: rgba(255,255,255,0.88);
         }
 
-        .dashboard-body {
-            padding: 24px;
-        }
-
-        .menu-lista {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .menu-lista li {
-            margin-bottom: 14px;
-        }
-
-        .menu-link {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 16px 18px;
-            border-radius: 14px;
-            background: linear-gradient(180deg, #1f2937, #18212f);
-            color: #e5e7eb;
-            text-decoration: none;
-            font-weight: 600;
-            border: 1px solid rgba(255,255,255,0.06);
-            transition: all 0.2s ease;
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
-        }
-
-        .menu-link:hover {
-            transform: translateY(-3px);
-            background: linear-gradient(180deg, #2a3647, #1d2635);
-            border-color: rgba(124, 58, 237, 0.45);
-            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
-        }
-
-        .menu-texto {
+        .menu-grid {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 18px;
         }
 
-        .menu-titulo {
-            font-size: 16px;
-            color: #f9fafb;
+        .menu-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 24px;
+            text-decoration: none;
+            box-shadow: 0 16px 35px rgba(15, 23, 42, 0.10);
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 18px;
         }
 
-        .menu-subtitulo {
-            font-size: 12px;
-            color: #9ca3af;
-            font-weight: normal;
+        .menu-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 22px 45px rgba(15, 23, 42, 0.16);
+            border-color: #10b981;
         }
 
-        .menu-icone {
-            font-size: 20px;
-            opacity: 0.9;
+        .menu-icon {
+            width: 58px;
+            height: 58px;
+            min-width: 58px;
+            border-radius: 16px;
+            background: #ecfdf5;
+            color: #047857;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+        }
+
+        .menu-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-title {
+            color: #0f172a;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .menu-subtitle {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.4;
         }
 
         .logout-link {
-            display: block;
-            padding: 14px 16px;
-            margin-top: 20px;
-            border-radius: 12px;
-            background: rgba(239, 68, 68, 0.14);
-            color: #f87171;
+            display: inline-block;
+            margin-top: 24px;
+            padding: 12px 22px;
+            border-radius: 10px;
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
             text-decoration: none;
-            font-weight: 600;
-            text-align: center;
-            border: 1px solid rgba(239, 68, 68, 0.28);
-            transition: all 0.2s ease;
+            font-weight: 700;
+            transition: 0.2s;
         }
 
         .logout-link:hover {
-            background: rgba(239, 68, 68, 0.22);
-            transform: translateY(-2px);
+            background: #fee2e2;
+            transform: translateY(-1px);
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
+
             .dashboard-header h1 {
-                font-size: 24px;
+                font-size: 26px;
             }
 
-            .menu-link {
-                padding: 14px 15px;
+            .menu-card {
+                flex-direction: column;
+                align-items: flex-start;
             }
 
-            .menu-titulo {
-                font-size: 15px;
+            .menu-icon {
+                margin-bottom: 8px;
             }
         }
     </style>
 </head>
+
 <body>
 
 <g:set var="nomesControllers" value="${[
-    registroPonto: 'Registrar Ponto',
     cadastro: 'Cadastro de Colaborador',
+    registroPonto: 'Registrar Ponto',
     relatorio: 'Relatórios'
 ]}" />
 
 <g:set var="subtitulosControllers" value="${[
-    registroPonto: 'Cadastre entradas e saídas',
-    cadastro: 'Gerencie os colaboradores',
-    relatorio: 'Consulte horas e registros'
+    cadastro: 'Gerencie os colaboradores cadastrados',
+    registroPonto: 'Cadastre entradas e saídas dos colaboradores',
+    relatorio: 'Consulte horas, registros e informações'
 ]}" />
 
 <g:set var="iconesControllers" value="${[
-    registroPonto: '⏱️',
     cadastro: '👤',
+    registroPonto: '⏱️',
     relatorio: '📊'
 ]}" />
 
-<div class="dashboard-box">
+<div class="dashboard-container">
 
     <div class="dashboard-header">
         <h1>Dashboard</h1>
-        <p>Acesse rapidamente as principais áreas do sistema</p>
+        <p>Acesse rapidamente as principais áreas do sistema Ponto Soft.</p>
     </div>
 
-    <div class="dashboard-body">
+    <div class="menu-grid">
 
-        <ul class="menu-lista">
-            <g:each in="${controllers}" var="ctrl">
-                <li>
-                    <g:link controller="${ctrl}" action="index" class="menu-link">
-                        <div class="menu-texto">
-                            <span class="menu-titulo">${nomesControllers[ctrl] ?: ctrl.capitalize()}</span>
-                            <span class="menu-subtitulo">${subtitulosControllers[ctrl] ?: 'Acessar módulo'}</span>
-                        </div>
+        <g:each in="${['cadastro', 'registroPonto', 'relatorio']}" var="ctrl">
 
-                        <span class="menu-icone">${iconesControllers[ctrl] ?: '➜'}</span>
-                    </g:link>
-                </li>
-            </g:each>
-        </ul>
+            <g:link controller="${ctrl}" action="index" class="menu-card">
 
-        <g:link controller="auth" action="logout" class="logout-link">
-            Sair
-        </g:link>
+                <div class="menu-icon">
+                    ${iconesControllers[ctrl]}
+                </div>
+
+                <div class="menu-content">
+
+                    <span class="menu-title">
+                        ${nomesControllers[ctrl]}
+                    </span>
+
+                    <span class="menu-subtitle">
+                        ${subtitulosControllers[ctrl]}
+                    </span>
+
+                </div>
+
+            </g:link>
+
+        </g:each>
 
     </div>
+
+    <g:link controller="auth" action="logout" class="logout-link">
+        Sair
+    </g:link>
+
 </div>
 
 </body>

@@ -12,194 +12,199 @@
             margin: 0;
             font-family: Arial, sans-serif;
             min-height: 100vh;
-            background:
-                radial-gradient(circle at top, rgba(124, 58, 237, 0.24), transparent 35%),
-                linear-gradient(135deg, #050505, #0f0f2e, #2e1065, #4c1d95);
+            background: #f4f8f7;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 24px;
-            color: #f9fafb;
         }
 
-        .relatorio-box {
+        .relatorio-container {
             width: 100%;
-            max-width: 520px;
-            background: rgba(17, 24, 39, 0.96);
-            border-radius: 20px;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
+            max-width: 760px;
+            background: white;
+            border-radius: 22px;
             overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.08);
-            backdrop-filter: blur(6px);
+            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.15);
+            border: 1px solid #e2e8f0;
         }
 
         .relatorio-header {
-            padding: 28px 24px 22px;
-            text-align: center;
-            background: linear-gradient(90deg, rgba(76, 29, 149, 0.95), rgba(124, 58, 237, 0.95));
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            background: linear-gradient(160deg, #065f46, #047857, #10b981);
+            color: white;
+            padding: 32px;
         }
 
         .relatorio-header h1 {
             margin: 0;
-            font-size: 28px;
-            font-weight: 700;
-            color: #fff;
+            font-size: 30px;
         }
 
         .relatorio-header p {
             margin: 8px 0 0;
+            color: rgba(255,255,255,0.88);
             font-size: 14px;
-            color: rgba(255,255,255,0.86);
-            line-height: 1.5;
         }
 
         .relatorio-body {
-            padding: 24px;
+            padding: 28px 32px;
         }
 
         .menu-lista {
             list-style: none;
             padding: 0;
             margin: 0;
-        }
-
-        .menu-lista li {
-            margin-bottom: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
         }
 
         .menu-link {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 14px;
-            padding: 16px 18px;
+            gap: 18px;
+            padding: 18px;
             border-radius: 16px;
-            background: linear-gradient(180deg, #1f2937, #18212f);
-            color: #e5e7eb;
+            background: white;
+            color: #0f172a;
             text-decoration: none;
-            border: 1px solid rgba(255,255,255,0.06);
-            transition: all 0.2s ease;
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+            transition: 0.2s;
         }
 
         .menu-link:hover {
             transform: translateY(-3px);
-            background: linear-gradient(180deg, #2b3647, #1d2634);
-            border-color: rgba(139, 92, 246, 0.45);
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
-            color: #fff;
+            box-shadow: 0 18px 35px rgba(15, 23, 42, 0.12);
+            border-color: #10b981;
         }
 
         .menu-conteudo {
             display: flex;
             flex-direction: column;
-            gap: 4px;
-            text-align: left;
+            gap: 5px;
         }
 
         .menu-titulo {
-            font-size: 16px;
+            font-size: 17px;
             font-weight: 700;
-            color: #f8fafc;
+            color: #0f172a;
         }
 
         .menu-subtitulo {
             font-size: 13px;
-            color: #94a3b8;
+            color: #64748b;
             line-height: 1.4;
         }
 
         .menu-icone {
-            font-size: 22px;
-            flex-shrink: 0;
-            opacity: 0.95;
+            width: 52px;
+            height: 52px;
+            min-width: 52px;
+            border-radius: 15px;
+            background: #ecfdf5;
+            color: #047857;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
         }
 
         .menu-link.voltar {
-            margin-top: 18px;
             justify-content: center;
-            background: rgba(255,255,255,0.06);
+            background: white;
+            color: #047857;
+            border: 1px solid #10b981;
+            font-weight: 700;
+            box-shadow: none;
         }
 
         .menu-link.voltar:hover {
-            background: rgba(255,255,255,0.12);
-            border-color: rgba(255,255,255,0.12);
+            background: #ecfdf5;
+            transform: translateY(-1px);
         }
 
-        @media (max-width: 600px) {
-            .relatorio-box {
-                max-width: 100%;
+        @media (max-width: 700px) {
+
+            .relatorio-body {
+                padding: 24px 20px;
+            }
+
+            .relatorio-header {
+                padding: 26px 22px;
             }
 
             .relatorio-header h1 {
-                font-size: 24px;
+                font-size: 26px;
             }
 
             .menu-link {
-                padding: 14px 15px;
-            }
-
-            .menu-titulo {
-                font-size: 15px;
-            }
-
-            .menu-subtitulo {
-                font-size: 12px;
+                align-items: flex-start;
             }
         }
     </style>
 </head>
+
 <body>
 
-<div class="relatorio-box">
+<div class="relatorio-container">
 
     <div class="relatorio-header">
         <h1>Relatórios</h1>
-        <p>Escolha uma opção para consultar informações, acompanhar jornadas e analisar registros.</p>
+        <p>Escolha uma opção para consultar informações e acompanhar jornadas.</p>
     </div>
 
     <div class="relatorio-body">
 
         <ul class="menu-lista">
-            <li>
-                <g:link controller="relatorio" action="horastrabalhadas" class="menu-link">
-                    <div class="menu-conteudo">
-                        <span class="menu-titulo">Horas trabalhadas</span>
-                        <span class="menu-subtitulo">Consulte o total de horas por colaborador em um período.</span>
-                    </div>
-                    <span class="menu-icone">⏱️</span>
-                </g:link>
-            </li>
+
+            <g:each in="${relatorios}" var="relatorio">
+
+                <li>
+
+                    <g:link controller="relatorio"
+                            action="${relatorio.action}"
+                            class="menu-link">
+
+                        <div class="menu-conteudo">
+
+                            <span class="menu-titulo">
+                                ${relatorio.nome}
+                            </span>
+
+                            <span class="menu-subtitulo">
+                                ${relatorio.descricao}
+                            </span>
+
+                        </div>
+
+                        <span class="menu-icone">
+                            ${relatorio.icone}
+                        </span>
+
+                    </g:link>
+
+                </li>
+
+            </g:each>
 
             <li>
-                <g:link controller="relatorio" action="horasexcedentes" class="menu-link">
-                    <div class="menu-conteudo">
-                        <span class="menu-titulo">Horas excedidas</span>
-                        <span class="menu-subtitulo">Visualize excedentes de jornada registrados no sistema.</span>
-                    </div>
-                    <span class="menu-icone">📈</span>
-                </g:link>
-            </li>
 
-            <li>
-                <g:link controller="relatorio" action="listarcolaboradores" class="menu-link">
-                    <div class="menu-conteudo">
-                        <span class="menu-titulo">Registros por colaborador</span>
-                        <span class="menu-subtitulo">Liste entradas e saídas filtrando por colaborador.</span>
-                    </div>
-                    <span class="menu-icone">👤</span>
-                </g:link>
-            </li>
+                <g:link controller="dashboard"
+                        action="index"
+                        class="menu-link voltar">
 
-            <li>
-                <g:link controller="dashboard" action="index" class="menu-link voltar">
                     Voltar
+
                 </g:link>
+
             </li>
+
         </ul>
 
     </div>
+
 </div>
 
 </body>
